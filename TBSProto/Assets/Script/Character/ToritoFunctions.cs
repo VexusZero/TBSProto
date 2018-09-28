@@ -59,13 +59,14 @@ public class ToritoFunctions : MonoBehaviour
 		int tempX = movementReference.positionX;
 		int tempY = movementReference.positionY;
 
+        if (selectableTargets.Count != 0)
+        {
+            selectableTargets.Clear();
+        }
 
-		if (playerReference.isAbilityActive)
+        if (playerReference.isAbilityActive)
 		{
-			if(selectableTargets.Count != 0)
-			{
-				selectableTargets.Clear ();
-			}
+			
 
 			for (int i = tempX; i < moveRangeX; i++)
 			{
@@ -90,8 +91,11 @@ public class ToritoFunctions : MonoBehaviour
 				}
 				else
 				{
-					lastObjectChecked.GetComponent<TerrainCubeData> ().ChangeMaterial (MapManager._Instance.materialPool[3], false);
-					selectableTargets.Add (lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+                    if (lastObjectChecked != null)
+                    {
+                        lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
+                        selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+                    }
 
 				}
 
@@ -123,9 +127,11 @@ public class ToritoFunctions : MonoBehaviour
 				}
 				else
 				{
-					lastObjectChecked.GetComponent<TerrainCubeData> ().ChangeMaterial (MapManager._Instance.materialPool[3], false);
-					selectableTargets.Add (lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
-
+                    if (lastObjectChecked != null)
+                    {
+                        lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
+                        selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+                    }
 				}
 			}
 
@@ -153,9 +159,11 @@ public class ToritoFunctions : MonoBehaviour
 				}
 				else
 				{
-					lastObjectChecked.GetComponent<TerrainCubeData> ().ChangeMaterial (MapManager._Instance.materialPool[3], false);
-					selectableTargets.Add (lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
-
+                    if (lastObjectChecked != null)
+                    {
+                        lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
+                        selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+                    }
 				}
 			}
 
@@ -183,9 +191,11 @@ public class ToritoFunctions : MonoBehaviour
 				}
 				else
 				{
-					lastObjectChecked.GetComponent<TerrainCubeData> ().ChangeMaterial (MapManager._Instance.materialPool[3], false);
-					selectableTargets.Add (lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
-
+                    if (lastObjectChecked != null)
+                    {
+                        lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
+                        selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+                    }
 				}
 
 
@@ -234,7 +244,9 @@ public class ToritoFunctions : MonoBehaviour
 			{
 				tempData = pointerRayData.transform.GetComponentInParent<TerrainCubeData> ();
 
-				// PRE-SET PARENT REFERENCE HERE - OTHERWISE IT WILL BE SET ON LAST ENEMY POSITION YOU DUMBASS!
+                // PRE-SET PARENT REFERENCE HERE - OTHERWISE IT WILL BE SET ON LAST ENEMY POSITION YOU DUMBASS!
+
+                Transform tempTransform = pointerRayData.transform.parent;
 
 				if(CheckSelectedTerrain(tempData.gridPosition))
 				{
@@ -252,7 +264,7 @@ public class ToritoFunctions : MonoBehaviour
 					transform.position = Vector3.zero;
 
 
-					transform.SetParent (pointerRayData.transform.parent, false);
+					transform.SetParent (tempTransform, false);
 
 					tempData.occupant = gameObject;
 

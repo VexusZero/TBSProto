@@ -23,13 +23,15 @@ public class AudioManager : MonoBehaviour
 
 	public void PlayIndexedSound(int audioID)
 	{
-		/*Documented Audio IDs - Please, when adding a new clip to the AudioPool write down new entry in here.
+        /*Documented Audio IDs - Please, when adding a new clip to the AudioPool write down new entry in here.
 
 		0 - SMRPG - Enemy Flee - DEBUG SOUND.
 
 		*/
-
-		activeCamera.GetComponent<AudioSource> ().PlayOneShot (audioPool[audioID]);
-	}
+        if (!activeCamera.GetComponent<AudioSource>().isPlaying)
+        {
+            activeCamera.GetComponent<AudioSource>().PlayOneShot(audioPool[audioID]);
+        }
+    }
 
 }
