@@ -29,20 +29,32 @@ public class ToritoFunctions : MonoBehaviour
 		switch(inputType)
 		{
 
-		// Case doesn't allow movement effect on the wall.
+		// Case doesn't allow movement effect on wall.
 		case ObjectType.Wall:
-			selectableTargets.Add (lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
-			lastObjectChecked.GetComponent<TerrainCubeData> ().ChangeMaterial (MapManager._Instance.materialPool[3], false);
+
+                // Preemptive check to avoid null-reference if Player is adyacent to a wall.
+                if (lastObjectChecked != null)
+                {
+                    selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+                    lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
+                }
 			break;
 
 		case ObjectType.Enemy:
-			selectableTargets.Add (inputTerrain.GetComponent<TerrainCubeData>().gridPosition);
-			inputData.ChangeMaterial (MapManager._Instance.materialPool[3], false);
+                if (lastObjectChecked != null)
+                {
+                    selectableTargets.Add(inputTerrain.GetComponent<TerrainCubeData>().gridPosition);
+                    inputData.ChangeMaterial(MapManager._Instance.materialPool[3], false);
+                }
 			break;
 
 		case ObjectType.Player:
-			selectableTargets.Add (inputTerrain.GetComponent<TerrainCubeData>().gridPosition);
-			inputData.ChangeMaterial (MapManager._Instance.materialPool[3], false);
+                if (lastObjectChecked != null)
+                {
+                    selectableTargets.Add(inputTerrain.GetComponent<TerrainCubeData>().gridPosition);
+                    inputData.ChangeMaterial(MapManager._Instance.materialPool[3], false);
+                }
+
 			break;
 
 		default:
@@ -85,6 +97,7 @@ public class ToritoFunctions : MonoBehaviour
 					else
 					{
 						SelectTargetObjectType (tempData.occupant.GetComponent<MapObjectData> ().type, tempData, targetObject);
+                        lastObjectChecked = null;
 						break;
 					}
 					lastObjectChecked = targetObject;
@@ -95,6 +108,8 @@ public class ToritoFunctions : MonoBehaviour
                     {
                         lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
                         selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+                        lastObjectChecked = null; // Last object cleanup after finishing line sweep.
+                        break;
                     }
 
 				}
@@ -120,7 +135,8 @@ public class ToritoFunctions : MonoBehaviour
 					else
 					{
 						SelectTargetObjectType (tempData.occupant.GetComponent<MapObjectData> ().type, tempData, targetObject);
-						break;
+                        lastObjectChecked = null;
+                        break;
 					}
 
 					lastObjectChecked = targetObject;
@@ -131,6 +147,8 @@ public class ToritoFunctions : MonoBehaviour
                     {
                         lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
                         selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+                        lastObjectChecked = null; // Last object cleanup after finishing line sweep.
+                        break;
                     }
 				}
 			}
@@ -152,8 +170,9 @@ public class ToritoFunctions : MonoBehaviour
 					else
 					{
 						SelectTargetObjectType (tempData.occupant.GetComponent<MapObjectData> ().type, tempData, targetObject);
-						break;
-					}
+                        lastObjectChecked = null;
+                        break;
+                    }
 
 					lastObjectChecked = targetObject;
 				}
@@ -163,6 +182,8 @@ public class ToritoFunctions : MonoBehaviour
                     {
                         lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
                         selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+                        lastObjectChecked = null; // Last object cleanup after finishing line sweep.
+                        break;
                     }
 				}
 			}
@@ -183,7 +204,8 @@ public class ToritoFunctions : MonoBehaviour
 					else
 					{
 						SelectTargetObjectType (tempData.occupant.GetComponent<MapObjectData>().type, tempData, targetObject);
-						break;
+                        lastObjectChecked = null;
+                        break;
 					}
 
 					lastObjectChecked = targetObject;
@@ -195,6 +217,8 @@ public class ToritoFunctions : MonoBehaviour
                     {
                         lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
                         selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+                        lastObjectChecked = null; // Last object cleanup after finishing line sweep.
+                        break;
                     }
 				}
 
