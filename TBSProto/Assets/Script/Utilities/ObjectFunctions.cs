@@ -22,4 +22,12 @@ public class ObjectFunctions
 
 		return output;
 	}
+
+	// Based on the enemy destroy-function. EXPERIMENTAL, if this works this should be the "standarized" destroy function for EVERY object.
+	public static void DestroyObject(GameObject targetObject)
+	{
+		targetObject.GetComponent<MapObjectData> ().VFXObject.GetComponent<ParticleSystem> ().Play ();
+		AudioManager._Instance.PlayIndexedSound (0); // might not work in a class-only environment!
+		GameObject.Destroy(targetObject, 1f);
+	}
 }

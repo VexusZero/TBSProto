@@ -53,30 +53,32 @@ public class MapManager : MonoBehaviour
 	{
 		for(int i = 0; i< objectList.Count; i++)
 		{
-			CreateMapObject (objectList[i].targetObject, objectList[i].posX, objectList[i].posY);
+			CreateMapObject (objectList[i].targetObject, objectList[i].facing , objectList[i].posX, objectList[i].posY);
 		}
 	}
 
 	// (!) Generate test block in Coord (3,3) and (4,2).
 
-	void CreateMapObject(GameObject inputObject, int inputPosX, int inputPosY)
+	void CreateMapObject(GameObject inputObject, ObjectFacing inputFacing , int inputPosX, int inputPosY)
 	{
+
 		foreach (GameObject target in terrainList)
 		{
 			TerrainCubeData tempData = target.GetComponent<TerrainCubeData> ();
 
 			if(tempData.gridPosition.posX == inputPosX && tempData.gridPosition.posY == inputPosY && CheckTile(inputPosX, inputPosY))
 			{
+
 				print ("Generating: " + inputObject.name + " in " + inputPosX + "," + inputPosY);
 				GameObject go = GameObject.Instantiate (inputObject, Vector3.zero, transform.rotation);
 				go.transform.SetParent (target.transform, false);
 				tempData.occupant = go;
-				AddObjectToManager (go);
+				ObjectPostConfig (go, inputFacing);
 			}
 		}
 	}
 
-	void AddObjectToManager(GameObject target)
+	void ObjectPostConfig(GameObject target, ObjectFacing inputFacing)
 	{
 		MapObjectData tempData = target.GetComponent<MapObjectData> ();
 
@@ -95,6 +97,11 @@ public class MapManager : MonoBehaviour
 		case ObjectType.Wall:
 			// add to list
 			MainGameManager._Instance.wallList.Add(target);
+			break;
+
+		case ObjectType.DirectionalMove:
+			target.GetComponent<ObjectMovement> ().facingConfig = inputFacing;
+			MainGameManager._Instance.enemyList.Add (target);
 			break;
 
 		default:

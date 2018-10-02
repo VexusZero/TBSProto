@@ -6,18 +6,13 @@ public class MapObjectData : MonoBehaviour
 {
 	public ObjectType type;
 
+	public GameObject VFXObject; // new reference, should be attached to this rather than an specific data component (ex. EnemyData)
 
 	// Use this for initialization
 	void Start ()
 	{
 		InitObject ();
 		InitDebugVFX ();
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		
 	}
 
 	void InitObject()
@@ -35,12 +30,26 @@ public class MapObjectData : MonoBehaviour
 
 	void InitDebugVFX()
 	{
+		GameObject go;
+
 		switch (type)
 		{
-		case ObjectType.Enemy:
-			GameObject go = GameObject.Instantiate (MainGameManager._Instance.VFXObject, transform.parent);
+		case ObjectType.Player:
+			go = GameObject.Instantiate (MainGameManager._Instance.VFXObject, transform.parent);
 			go.transform.SetParent (gameObject.transform, false);
-			GetComponent<EnemyData> ().VFXObject = go;
+			VFXObject = go;
+			break;
+
+		case ObjectType.Enemy:
+			go = GameObject.Instantiate (MainGameManager._Instance.VFXObject, transform.parent);
+			go.transform.SetParent (gameObject.transform, false);
+			VFXObject = go;
+			break;
+
+		case ObjectType.DirectionalMove:
+			go = GameObject.Instantiate (MainGameManager._Instance.VFXObject, transform.parent);
+			go.transform.SetParent(gameObject.transform, false);
+			VFXObject = go;
 			break;
 
 		default:

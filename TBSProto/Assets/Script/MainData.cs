@@ -11,12 +11,21 @@ public enum TerrainType
 	Heal,
 }
 
+public enum ObjectFacing // EXPERIMENTAL, For now only used for specific movable objects (this might be used later for character facing!)
+{
+    North,
+    South,
+    East,
+    West,
+}
+
 // Define Object specifit type for certain behaviours
 public enum ObjectType
 {
 	Player,
 	Enemy,
 	Wall,
+    DirectionalMove, // Not a pretty name but it's the kind of block that you can move from one side.
 }
 
 // Unnamed characters are displayed as "slots". Change them AS SOON AS new characters are available from degisn.
@@ -37,10 +46,11 @@ public struct TerrainPosition
 	public int posY;
 }
 
-// (?) I can't remember well why this specific struct was made.... My bad :(
+// Information struct that specifies what object and which configuration should be taken!
 [System.Serializable]
 public struct ObjectData
 {
+	[SerializeField] public ObjectFacing facing;
 	[SerializeField] public GameObject targetObject;
 	[SerializeField] public int posX;
 	[SerializeField] public int posY;
