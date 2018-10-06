@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: bb5e7da07c0707c45aafb160c9efa601
+guid: 048a1bcc79706684e9c02cc41230d51e
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Suelo
+    100000: intRocaInmovilv2
     100002: //RootNode
-    400000: Suelo
+    400000: intRocaInmovilv2
     400002: //RootNode
-    2100000: SueloMat
-    2300000: Suelo
-    3300000: Suelo
-    4300000: Suelo
+    2100000: intRocaInmovilv2Mat
+    2300000: intRocaInmovilv2
+    3300000: intRocaInmovilv2
+    4300000: intRocaInmovilv2
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: SueloMat
-    second: {fileID: 2100000, guid: 0147ca3b966fbf94ca43b0ae1b955f4a, type: 2}
+      name: intRocaInmovilv2Mat
+    second: {fileID: 2100000, guid: 45890cf173133834c95c6902c8d5ec6e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

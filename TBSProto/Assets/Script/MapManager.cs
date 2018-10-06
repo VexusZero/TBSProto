@@ -17,6 +17,7 @@ public class MapManager : MonoBehaviour
 	public int sizeX;
 	public int sizeY;
 	public float gridOffset;
+	public float objectOffset; // Correction in case Y-Axis causes problems on imported meshes (because it really happens a lot :( )
 
 	private Vector3 correctedPosition = new Vector3(-4.5f, 0f, -4.5f);
 
@@ -72,6 +73,7 @@ public class MapManager : MonoBehaviour
 				print ("Generating: " + inputObject.name + " in " + inputPosX + "," + inputPosY);
 				GameObject go = GameObject.Instantiate (inputObject, Vector3.zero, transform.rotation);
 				go.transform.SetParent (target.transform, false);
+				go.transform.localPosition = new Vector3 (0f, objectOffset, 0f);
 				tempData.occupant = go;
 				ObjectPostConfig (go, inputFacing);
 			}

@@ -287,6 +287,7 @@ public class ToritoFunctions : MonoBehaviour
 
 
 					transform.SetParent (pointerRayData.transform, false);
+					transform.localPosition = new Vector3 (0f, MapManager._Instance.objectOffset, 0f);
 					tempData.occupant = gameObject;
 
 					movementReference.positionX = tempData.gridPosition.posX;
@@ -325,6 +326,7 @@ public class ToritoFunctions : MonoBehaviour
 
 
 					transform.SetParent (tempTransform, false);
+					transform.localPosition = new Vector3 (0f, MapManager._Instance.objectOffset, 0f);
 
 					tempData.occupant = gameObject;
 

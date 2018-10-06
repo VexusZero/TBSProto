@@ -36,6 +36,7 @@ public class ObjectMovement : MonoBehaviour
 				transform.position = Vector3.zero;
 
 				transform.SetParent (targetTerrain.transform, false);
+				transform.localPosition = new Vector3 (0f, MapManager._Instance.objectOffset, 0f);
 				tempData.occupant = gameObject;
 
 			}

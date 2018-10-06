@@ -120,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
 					transform.position = Vector3.zero;
 
 					transform.SetParent (pointerData.transform, false);
+					transform.localPosition = new Vector3 (0f, MapManager._Instance.objectOffset, 0f);
 					tempData.occupant = gameObject;
 
 					positionX = tempData.gridPosition.posX;

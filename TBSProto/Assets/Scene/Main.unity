@@ -415,6 +415,11 @@ MonoBehaviour:
       type: 2}
     posX: 5
     posY: 8
+  - facing: 2
+    targetObject: {fileID: 1815561786240016, guid: 80b18ca35e1909642af4d95683a49938,
+      type: 2}
+    posX: 7
+    posY: 8
   terrainObject: {fileID: 1865792682777254, guid: 0c2650a5a5cb3854d86fa13605a2c106,
     type: 2}
   wallObject: {fileID: 1815561786240016, guid: b776af48c40fde64eb9f1466c19f92ed, type: 2}
@@ -426,12 +431,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ab6ac13d237f2a945acaef82e7070bc8, type: 2}
   - {fileID: 2100000, guid: e8c266ef2f123744e866948f4a4b10e7, type: 2}
   - {fileID: 2100000, guid: 0b55e67f9d53f16468b113d4eeb9271e, type: 2}
-  - {fileID: 2100000, guid: 995ae8e4c13595743b8f821ca652b02f, type: 2}
+  - {fileID: 2100000, guid: 0147ca3b966fbf94ca43b0ae1b955f4a, type: 2}
   - {fileID: 2100000, guid: a9a86ac261d368843943198a6d381800, type: 2}
   - {fileID: 2100000, guid: 37519bd698b36954897a6c0249de47b6, type: 2}
   sizeX: 10
   sizeY: 10
   gridOffset: 1
+  objectOffset: 1
 --- !u!1 &610827540
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,9 +568,9 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 141228224}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
