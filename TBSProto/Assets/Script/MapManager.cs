@@ -104,6 +104,10 @@ public class MapManager : MonoBehaviour
 			MainGameManager._Instance.enemyList.Add (target);
 			break;
 
+		case ObjectType.Goal:
+			print ("Goal Established");
+			break;
+
 		default:
 			Debug.LogError ("ERROR: GENERATED OBJECT DOESN'T HAVE A COMPATIBLE TYPE!");
 			break;

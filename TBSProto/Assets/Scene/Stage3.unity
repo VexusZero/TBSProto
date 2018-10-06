@@ -300,7 +300,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 302906905}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -380,41 +380,56 @@ MonoBehaviour:
       type: 2}
     posX: 0
     posY: 0
-  - facing: 0
-    targetObject: {fileID: 1815561786240016, guid: b776af48c40fde64eb9f1466c19f92ed,
+  - facing: 2
+    targetObject: {fileID: 1815561786240016, guid: aad730a4aaeabbf4289e662e1fe93a80,
       type: 2}
     posX: 3
-    posY: 3
-  - facing: 0
-    targetObject: {fileID: 1276038834714014, guid: 3e4ae221bebf032488449f91a6b68296,
-      type: 2}
-    posX: 6
-    posY: 3
-  - facing: 0
-    targetObject: {fileID: 1815561786240016, guid: aad730a4aaeabbf4289e662e1fe93a80,
-      type: 2}
-    posX: 7
-    posY: 5
-  - facing: 1
-    targetObject: {fileID: 1276038834714014, guid: 3e4ae221bebf032488449f91a6b68296,
-      type: 2}
-    posX: 2
-    posY: 8
-  - facing: 3
-    targetObject: {fileID: 1276038834714014, guid: 3e4ae221bebf032488449f91a6b68296,
-      type: 2}
-    posX: 5
     posY: 0
-  - facing: 3
-    targetObject: {fileID: 1815561786240016, guid: aad730a4aaeabbf4289e662e1fe93a80,
-      type: 2}
-    posX: 8
-    posY: 1
   - facing: 2
     targetObject: {fileID: 1276038834714014, guid: 3e4ae221bebf032488449f91a6b68296,
       type: 2}
     posX: 5
-    posY: 8
+    posY: 0
+  - facing: 0
+    targetObject: {fileID: 1815561786240016, guid: aad730a4aaeabbf4289e662e1fe93a80,
+      type: 2}
+    posX: 1
+    posY: 1
+  - facing: 1
+    targetObject: {fileID: 1276038834714014, guid: 3e4ae221bebf032488449f91a6b68296,
+      type: 2}
+    posX: 3
+    posY: 1
+  - facing: 3
+    targetObject: {fileID: 1815561786240016, guid: aad730a4aaeabbf4289e662e1fe93a80,
+      type: 2}
+    posX: 0
+    posY: 2
+  - facing: 3
+    targetObject: {fileID: 1815561786240016, guid: b776af48c40fde64eb9f1466c19f92ed,
+      type: 2}
+    posX: 2
+    posY: 3
+  - facing: 3
+    targetObject: {fileID: 1815561786240016, guid: 80b18ca35e1909642af4d95683a49938,
+      type: 2}
+    posX: 3
+    posY: 3
+  - facing: 3
+    targetObject: {fileID: 1815561786240016, guid: b776af48c40fde64eb9f1466c19f92ed,
+      type: 2}
+    posX: 4
+    posY: 3
+  - facing: 0
+    targetObject: {fileID: 1276038834714014, guid: 3e4ae221bebf032488449f91a6b68296,
+      type: 2}
+    posX: 0
+    posY: 5
+  - facing: 3
+    targetObject: {fileID: 1815561786240016, guid: b776af48c40fde64eb9f1466c19f92ed,
+      type: 2}
+    posX: 4
+    posY: 5
   terrainObject: {fileID: 1865792682777254, guid: 0c2650a5a5cb3854d86fa13605a2c106,
     type: 2}
   wallObject: {fileID: 1815561786240016, guid: b776af48c40fde64eb9f1466c19f92ed, type: 2}
@@ -429,8 +444,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 995ae8e4c13595743b8f821ca652b02f, type: 2}
   - {fileID: 2100000, guid: a9a86ac261d368843943198a6d381800, type: 2}
   - {fileID: 2100000, guid: 37519bd698b36954897a6c0249de47b6, type: 2}
-  sizeX: 10
-  sizeY: 10
+  sizeX: 6
+  sizeY: 6
   gridOffset: 1
 --- !u!1 &610827540
 GameObject:

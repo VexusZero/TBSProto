@@ -48,6 +48,15 @@ public class ToritoFunctions : MonoBehaviour
                 }
 			break;
 
+
+		case ObjectType.Goal:
+			if (lastObjectChecked != null)
+			{
+				selectableTargets.Add (inputTerrain.GetComponent<TerrainCubeData> ().gridPosition);
+				inputData.ChangeMaterial (MapManager._Instance.materialPool [3], false);
+			}
+			break;
+
 		case ObjectType.Player:
                 if (lastObjectChecked != null)
                 {
@@ -64,8 +73,12 @@ public class ToritoFunctions : MonoBehaviour
 			} 
 			else
 			{
-				selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
-				lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
+				if(lastObjectChecked != null)
+				{
+					selectableTargets.Add(lastObjectChecked.GetComponent<TerrainCubeData>().gridPosition);
+					lastObjectChecked.GetComponent<TerrainCubeData>().ChangeMaterial(MapManager._Instance.materialPool[3], false);
+				}
+
 			}
 			break;
 
@@ -343,6 +356,10 @@ public class ToritoFunctions : MonoBehaviour
 				targetObject.GetComponent<ObjectMovement> ().ApplyPushMovement (gameObject);
 				break;
 
+			case ObjectType.Goal:
+				targetObject.GetComponent<ObjectMovement> ().ApplyPushMovement (gameObject);
+				break;
+
 			default:
 				break;
 			}
@@ -392,13 +409,13 @@ public class ToritoFunctions : MonoBehaviour
 			break;
 
 		case ObjectFacing.West:
-			break;
-
-		default:
 			if(targetFacing == ObjectFacing.East)
 			{
 				output = true;
 			}
+			break;
+
+		default:
 			break;
 		}
 

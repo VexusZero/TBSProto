@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114246201116731918}
   - component: {fileID: 114292725356219940}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: GoalObject
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 37519bd698b36954897a6c0249de47b6, type: 2}
+  - {fileID: 2100000, guid: ff7eed84e75b90c4e83c0ad65563206f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebce017a7d94a584ea261e4792c61b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 4
   VFXObject: {fileID: 0}
 --- !u!114 &114292725356219940
 MonoBehaviour:

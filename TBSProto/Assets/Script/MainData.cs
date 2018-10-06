@@ -26,6 +26,7 @@ public enum ObjectType
 	Enemy,
 	Wall,
     DirectionalMove, // Not a pretty name but it's the kind of block that you can move from one side.
+	Goal,
 }
 
 // Unnamed characters are displayed as "slots". Change them AS SOON AS new characters are available from degisn.

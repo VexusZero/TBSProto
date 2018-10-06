@@ -52,6 +52,12 @@ public class MapObjectData : MonoBehaviour
 			VFXObject = go;
 			break;
 
+		case ObjectType.Goal:
+			go = GameObject.Instantiate (MainGameManager._Instance.VFXObject, transform.parent);
+			go.transform.SetParent (gameObject.transform, false);
+			VFXObject = go;
+			break;
+
 		default:
 			break;
 		}
