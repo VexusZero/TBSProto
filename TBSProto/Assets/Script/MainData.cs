@@ -59,5 +59,4 @@ public struct ObjectData
 
 public class MainData
 {
-
 }

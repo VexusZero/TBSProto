@@ -106,7 +106,7 @@ public class ToritoFunctions : MonoBehaviour
         if (playerReference.isAbilityActive)
 		{
 			
-			// X+ Check
+			// X+ Check - East
 			for (int i = tempX; i < moveRangeX; i++)
 			{
 				facingSample = ObjectFacing.East;
@@ -125,8 +125,9 @@ public class ToritoFunctions : MonoBehaviour
 					} 
 					else
 					{
+						// Insert Code Check Condition Here!
 						SelectTargetObjectType (tempData.occupant.GetComponent<MapObjectData> ().type, tempData, targetObject, facingSample);
-                        lastObjectChecked = null;
+						lastObjectChecked = null;
 						break;
 					}
 					lastObjectChecked = targetObject;
@@ -146,7 +147,7 @@ public class ToritoFunctions : MonoBehaviour
 
 			}
 
-			// Y+ Check
+			// Y+ Check - North
 			for(int i = tempY; i < moveRangeY; i++)
 			{
 				facingSample = ObjectFacing.North;
@@ -166,8 +167,8 @@ public class ToritoFunctions : MonoBehaviour
 					else
 					{
 						SelectTargetObjectType (tempData.occupant.GetComponent<MapObjectData> ().type, tempData, targetObject, facingSample);
-                        lastObjectChecked = null;
-                        break;
+						lastObjectChecked = null;
+						break;							
 					}
 
 					lastObjectChecked = targetObject;
@@ -184,7 +185,7 @@ public class ToritoFunctions : MonoBehaviour
 				}
 			}
 
-			// X- Check
+			// X- Check - West
 			for (int i = tempX; i >= 0; i--)
 			{
 				facingSample = ObjectFacing.West;
@@ -204,8 +205,8 @@ public class ToritoFunctions : MonoBehaviour
 					else
 					{
 						SelectTargetObjectType (tempData.occupant.GetComponent<MapObjectData> ().type, tempData, targetObject, facingSample);
-                        lastObjectChecked = null;
-                        break;
+						lastObjectChecked = null;
+						break;
                     }
 
 					lastObjectChecked = targetObject;
@@ -222,7 +223,7 @@ public class ToritoFunctions : MonoBehaviour
 				}
 			}
 
-			// Y- Check
+			// Y- Check - South
 			for(int i = tempY; i >= 0; i--)
 			{
 				facingSample = ObjectFacing.South;
@@ -239,9 +240,9 @@ public class ToritoFunctions : MonoBehaviour
 					}
 					else
 					{
-						SelectTargetObjectType (tempData.occupant.GetComponent<MapObjectData>().type, tempData, targetObject, facingSample);
-                        lastObjectChecked = null;
-                        break;
+						SelectTargetObjectType (tempData.occupant.GetComponent<MapObjectData> ().type, tempData, targetObject, facingSample);
+						lastObjectChecked = null;
+						break;
 					}
 
 					lastObjectChecked = targetObject;
@@ -340,6 +341,59 @@ public class ToritoFunctions : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	bool OnAdjacentCheck(TerrainCubeData inputData, ObjectFacing inputFacing)
+	{
+		GameObject adjacentTile;
+
+		bool output = false;
+
+
+		switch(inputFacing)
+		{
+		case ObjectFacing.North:
+			adjacentTile = MapManager._Instance.RequestMapTile (inputData.gridPosition.posX, inputData.gridPosition.posY+1);
+			if(adjacentTile != null)
+			{
+				print ("Checking North");
+				output = true;
+			}
+				break;
+
+		case ObjectFacing.South:
+			adjacentTile = MapManager._Instance.RequestMapTile (inputData.gridPosition.posX, inputData.gridPosition.posY-1);
+			if(adjacentTile != null)
+			{
+				print ("Checking South");
+				output = true;
+			}
+				break;
+
+		case ObjectFacing.East:
+			adjacentTile = MapManager._Instance.RequestMapTile (inputData.gridPosition.posX+1, inputData.gridPosition.posY);
+			if(adjacentTile != null)
+			{
+				print ("Checking East");
+				output = true;
+			}
+				break;
+
+			case ObjectFacing.West:
+			adjacentTile = MapManager._Instance.RequestMapTile (inputData.gridPosition.posX-1, inputData.gridPosition.posY);
+			if(adjacentTile != null)
+			{
+				print ("Checking West");
+				output = true;
+			}
+				break;
+
+			default:
+				break;
+			}
+
+		return output;
+
 	}
 
 	void OnAbilityInteractWithObject(GameObject targetObject)

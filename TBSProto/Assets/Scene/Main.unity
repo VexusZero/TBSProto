@@ -383,13 +383,13 @@ MonoBehaviour:
   - facing: 0
     targetObject: {fileID: 1815561786240016, guid: b776af48c40fde64eb9f1466c19f92ed,
       type: 2}
-    posX: 3
+    posX: 6
     posY: 3
   - facing: 0
     targetObject: {fileID: 1276038834714014, guid: 3e4ae221bebf032488449f91a6b68296,
       type: 2}
     posX: 6
-    posY: 3
+    posY: 4
   - facing: 0
     targetObject: {fileID: 1815561786240016, guid: aad730a4aaeabbf4289e662e1fe93a80,
       type: 2}
@@ -408,8 +408,8 @@ MonoBehaviour:
   - facing: 3
     targetObject: {fileID: 1815561786240016, guid: aad730a4aaeabbf4289e662e1fe93a80,
       type: 2}
-    posX: 8
-    posY: 1
+    posX: 2
+    posY: 3
   - facing: 2
     targetObject: {fileID: 1276038834714014, guid: 3e4ae221bebf032488449f91a6b68296,
       type: 2}

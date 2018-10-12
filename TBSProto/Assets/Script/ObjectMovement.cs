@@ -125,6 +125,11 @@ public class ObjectMovement : MonoBehaviour
 					if (positionX < tempMovementData.positionX)
 					{
 						print ("-X");
+						if(PostPushCheck(ObjectFacing.West))
+						{
+							print ("Break Movement");
+							break;
+						}
 						positionX -= 1;
 						UpdatePosition ();
 					}
@@ -132,6 +137,11 @@ public class ObjectMovement : MonoBehaviour
 					if(positionX > tempMovementData.positionX)
 					{
 						print ("+X");
+						if(PostPushCheck(ObjectFacing.East))
+						{
+							print ("Break Movement");
+							break;
+						}
 						positionX += 1;
 						UpdatePosition ();
 					}
@@ -152,6 +162,11 @@ public class ObjectMovement : MonoBehaviour
 					if(positionY < tempMovementData.positionY )
 					{
 						print ("-Y");
+						if(PostPushCheck(ObjectFacing.South))
+						{
+							print ("Break Movement");
+							break;
+						}
 						positionY -= 1;
 						UpdatePosition ();
 					}
@@ -159,6 +174,11 @@ public class ObjectMovement : MonoBehaviour
 					if(positionY > tempMovementData.positionY)
 					{
 						print ("+Y");
+						if(PostPushCheck(ObjectFacing.North))
+						{
+							print ("Break Movement");
+							break;
+						}
 						positionY += 1;
 						UpdatePosition ();
 					}
@@ -170,6 +190,75 @@ public class ObjectMovement : MonoBehaviour
 		default:
 			break;
 		}
+	}
+
+	bool PostPushCheck(ObjectFacing inputFacing)
+	{
+		GameObject tempMapObject;
+		bool output = false;
+
+		// WHAT WILL I DO HERE?!
+		switch(inputFacing)
+		{
+		case ObjectFacing.North:
+			tempMapObject = MapManager._Instance.RequestMapTile (positionX, positionY+1);
+			if(tempMapObject != null)
+			{
+				if(tempMapObject.GetComponent<TerrainCubeData>().occupant != null)
+				{
+					if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
+					{
+						output = true;
+					}
+				}
+			}
+
+			break;
+		case ObjectFacing.South:
+			tempMapObject = MapManager._Instance.RequestMapTile (positionX, positionY -1);
+			if(tempMapObject != null)
+			{
+				if(tempMapObject.GetComponent<TerrainCubeData>().occupant != null)
+				{
+					if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
+					{
+						output = true;
+					}
+				}
+			}
+			break;
+		case ObjectFacing.East:
+			tempMapObject = MapManager._Instance.RequestMapTile (positionX +1, positionY);
+			if(tempMapObject != null)
+			{
+				if(tempMapObject.GetComponent<TerrainCubeData>().occupant != null)
+				{
+					if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
+					{
+						output = true;
+					}
+				}
+			}
+			break;
+		case ObjectFacing.West:
+			tempMapObject = MapManager._Instance.RequestMapTile (positionX -1, positionY);
+			if(tempMapObject != null)
+			{
+				if(tempMapObject.GetComponent<TerrainCubeData>().occupant != null)
+				{
+					if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
+					{
+						output = true;
+					}
+				}
+			}
+			break;
+
+		default:
+			break;
+		}
+
+		return output;
 	}
 
 }

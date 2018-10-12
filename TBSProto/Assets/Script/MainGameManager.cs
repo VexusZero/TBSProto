@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainGameManager : MonoBehaviour
 {
@@ -24,10 +25,12 @@ public class MainGameManager : MonoBehaviour
 	{
 		
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+	public void OnVictoryAchieved()
 	{
-		
+		print ("Victory");
+		LevelManager._Instance.StartCountdown ();
 	}
+
+
 }

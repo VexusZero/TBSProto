@@ -13,6 +13,7 @@ public class MapObjectData : MonoBehaviour
 	{
 		InitObject ();
 		InitDebugVFX ();
+
 	}
 
 	void InitObject()
