@@ -17,16 +17,23 @@ public class ButtonFunctions : MonoBehaviour
 
 	public void OnStageButtonClicked(string inputStage)
 	{
-		SceneManager.LoadScene (inputStage);
+//		SceneManager.LoadScene (inputStage);
+		LevelManager._Instance.OnLevelSelectRequest (inputStage);
 	}
 
 	public void OnBackToMenuClicked()
 	{
-		SceneManager.LoadScene ("MainMenu");
+//		SceneManager.LoadScene ("MainMenu");
+		LevelManager._Instance.OnLevelSelectRequest ("MainMenu");
 	}
 
 	public void OnExitButtonClicked()
 	{
 		Application.Quit ();
+	}
+
+	public void OnCameraButtonClicked()
+	{
+		CameraManager._Instance.isCameraZoom = !CameraManager._Instance.isCameraZoom;
 	}
 }

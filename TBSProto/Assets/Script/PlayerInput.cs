@@ -42,5 +42,10 @@ public class PlayerInput : MonoBehaviour
 				playerReference.OnCharacterAbilityClickAction (Input.touches[0].position);
 			}
 		}
+
+		if(Input.GetKeyDown(KeyCode.D))
+		{
+			CameraManager._Instance.RetrieveSceneCamera ();
+		}
 	}
 }

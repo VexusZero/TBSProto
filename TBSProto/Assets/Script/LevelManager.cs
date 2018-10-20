@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
 	{
 		_Instance = this;
 
-		print ("Actual Bool State: " + isObjectProtected);
+		print ("Current Bool State: " + isObjectProtected);
 
 		if(!isObjectProtected)
 		{
@@ -25,12 +25,6 @@ public class LevelManager : MonoBehaviour
 			isObjectProtected = true;
 		}
 
-	}
-
-	// Use this for initialization
-	void Start ()
-	{
-		
 	}
 	
 	// Update is called once per frame
@@ -58,5 +52,10 @@ public class LevelManager : MonoBehaviour
 	public void OnReturnToMainMenu()
 	{
 		SceneManager.LoadScene ("MainMenu");
+	}
+
+	public void OnLevelSelectRequest(string inputStage)
+	{
+		SceneManager.LoadScene (inputStage);
 	}
 }

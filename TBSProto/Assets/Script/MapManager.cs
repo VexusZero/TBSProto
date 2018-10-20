@@ -31,6 +31,7 @@ public class MapManager : MonoBehaviour
 	{
 		GenerateTileMap ();
 		GenerateObjects ();
+		CameraManager._Instance.RetrieveSceneCamera ();
 	}
 
 	void GenerateTileMap()
