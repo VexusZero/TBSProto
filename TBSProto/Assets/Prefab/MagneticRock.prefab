@@ -415,8 +415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebce017a7d94a584ea261e4792c61b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 4
-  VFXObject: {fileID: 0}
+  type: 3
+  VFXObject: {fileID: 1603086327706698, guid: 89e78a574aa412a4fa86bb93f7d1afb0, type: 2}
 --- !u!114 &114805052177537046
 MonoBehaviour:
   m_ObjectHideFlags: 1
