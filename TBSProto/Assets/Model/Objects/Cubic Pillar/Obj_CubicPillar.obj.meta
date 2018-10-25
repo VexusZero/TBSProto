@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c74b99f730e78154e98351d44c7c8f09
+guid: ce3c76d3dce64944fb6bda1d83f58828
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Char_FaeralBull-1
+    100000: Obj_CubicPillar
     100002: //RootNode
-    400000: Char_FaeralBull-1
+    400000: Obj_CubicPillar
     400002: //RootNode
-    2100000: Char_FaeralBull-1Mat
-    2300000: Char_FaeralBull-1
-    3300000: Char_FaeralBull-1
-    4300000: Char_FaeralBull-1
+    2100000: Obj_CubicPillarMat
+    2300000: Obj_CubicPillar
+    3300000: Obj_CubicPillar
+    4300000: Obj_CubicPillar
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c74b99f730e78154e98351d44c7c8f09
+guid: 60c651b40958e004da6fa50d12f60d34
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Char_FaeralBull-1
+    100000: Tile_GrassType2
     100002: //RootNode
-    400000: Char_FaeralBull-1
+    400000: Tile_GrassType2
     400002: //RootNode
-    2100000: Char_FaeralBull-1Mat
-    2300000: Char_FaeralBull-1
-    3300000: Char_FaeralBull-1
-    4300000: Char_FaeralBull-1
+    2100000: Tile_GrassType2Mat
+    2300000: Tile_GrassType2
+    3300000: Tile_GrassType2
+    4300000: Tile_GrassType2
   externalObjects: {}
   materials:
     importMaterials: 1

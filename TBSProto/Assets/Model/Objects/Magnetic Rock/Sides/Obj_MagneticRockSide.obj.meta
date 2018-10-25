@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c74b99f730e78154e98351d44c7c8f09
+guid: 35a0f787f4bb8e14b9baa30bf137bdfe
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Char_FaeralBull-1
+    100000: Obj_MagneticRock-1
     100002: //RootNode
-    400000: Char_FaeralBull-1
+    400000: Obj_MagneticRock-1
     400002: //RootNode
-    2100000: Char_FaeralBull-1Mat
-    2300000: Char_FaeralBull-1
-    3300000: Char_FaeralBull-1
-    4300000: Char_FaeralBull-1
+    2100000: Obj_MagneticRock-1Mat
+    2300000: Obj_MagneticRock-1
+    3300000: Obj_MagneticRock-1
+    4300000: Obj_MagneticRock-1
   externalObjects: {}
   materials:
     importMaterials: 1

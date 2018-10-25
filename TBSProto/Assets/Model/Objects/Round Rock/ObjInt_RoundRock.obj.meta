@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c74b99f730e78154e98351d44c7c8f09
+guid: a1826b55135215f4aae2cafcde8177cd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Char_FaeralBull-1
+    100000: ObjInt_RoundRock
     100002: //RootNode
-    400000: Char_FaeralBull-1
+    400000: ObjInt_RoundRock
     400002: //RootNode
-    2100000: Char_FaeralBull-1Mat
-    2300000: Char_FaeralBull-1
-    3300000: Char_FaeralBull-1
-    4300000: Char_FaeralBull-1
+    2100000: ObjInt_RoundRockMat
+    2300000: ObjInt_RoundRock
+    3300000: ObjInt_RoundRock
+    4300000: ObjInt_RoundRock
   externalObjects: {}
   materials:
     importMaterials: 1
