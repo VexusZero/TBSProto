@@ -75,19 +75,19 @@ public class ObjectMovement : MonoBehaviour
 		switch(facingConfig)
 		{
 		case ObjectFacing.North:
-			transform.Rotate (new Vector3(0f, 180f, 0f));
+			transform.Rotate (new Vector3(0f, 0f, 0f));
 			break;
 
 		case ObjectFacing.South:
-			transform.Rotate (new Vector3 (0f, 0f, 0f));
+			transform.Rotate (new Vector3 (0f, 180f, 0f));
 			break;
 
 		case ObjectFacing.East:
-			transform.Rotate (new Vector3 (0f, 270f, 0f));
+			transform.Rotate (new Vector3 (0f, 90f, 0f));
 			break;
 
 		case ObjectFacing.West:
-			transform.Rotate (new Vector3 (0f, 90f, 0f));
+			transform.Rotate (new Vector3 (0f, 270f, 0f));
 			break;
 
 		default:
