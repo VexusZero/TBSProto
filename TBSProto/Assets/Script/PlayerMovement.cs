@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public ObjectFacing facingConfig = ObjectFacing.North;
+
 	public bool canPerformMovement = true; // true for default as it on the start you should be able to move right away (?)
 
 	public int moveRange = 1;
@@ -123,8 +125,15 @@ public class PlayerMovement : MonoBehaviour
 					transform.localPosition = new Vector3 (0f, MapManager._Instance.objectOffset, 0f);
 					tempData.occupant = gameObject;
 
-					positionX = tempData.gridPosition.posX;
+                    //Call a facing selector before updating to NEW position.
+                    SetFacingDirection(positionX, positionY, tempData.gridPosition.posX, tempData.gridPosition.posY);
+                    UpdateFacing();
+
+                    positionX = tempData.gridPosition.posX;
 					positionY = tempData.gridPosition.posY;
+
+                    // Update facing-rotation in HERE
+                    UpdateFacing();
 
 					ShowMovableTerrain ();
 				}
@@ -132,7 +141,56 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	bool CheckOccupiedTerrain(int posX, int posY)
+    // Experimental function to pre-set facing according to position targeting calculations.
+    void SetFacingDirection(int inputX, int inputY, int inputTargetX, int inputTargetY)
+    {
+        //Set Direction to - East
+        if (inputX - inputTargetX < 0 && inputY - inputTargetY == 0)
+        {
+            facingConfig = ObjectFacing.East;
+        }
+        if (inputX - inputTargetX > 0 && inputY - inputTargetY == 0) // Set Direction to - West
+        {
+            facingConfig = ObjectFacing.West;
+        }
+
+        //Set Direction to - South
+        if (inputY - inputTargetY < 0 && inputX - inputTargetX == 0)
+        {
+            facingConfig = ObjectFacing.North;
+        }
+        if (inputY - inputTargetY > 0 && inputX - inputTargetX == 0) // Set Direction to - North
+        {
+            facingConfig = ObjectFacing.South;
+        }
+    }
+
+    public void UpdateFacing()
+    {
+        switch (facingConfig)
+        {
+            case ObjectFacing.North:
+                transform.localRotation = Quaternion.Euler(0f,0f,0f);
+                break;
+
+            case ObjectFacing.South:
+                transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                break;
+
+            case ObjectFacing.East:
+                transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+                break;
+
+            case ObjectFacing.West:
+                transform.localRotation = Quaternion.Euler(0f, 270f, 0f);
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    bool CheckOccupiedTerrain(int posX, int posY)
 	{
 		bool output = true;
 
