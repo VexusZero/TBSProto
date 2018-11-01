@@ -142,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 
     // Experimental function to pre-set facing according to position targeting calculations.
-    void SetFacingDirection(int inputX, int inputY, int inputTargetX, int inputTargetY)
+    public void SetFacingDirection(int inputX, int inputY, int inputTargetX, int inputTargetY)
     {
         //Set Direction to - East
         if (inputX - inputTargetX < 0 && inputY - inputTargetY == 0)

@@ -291,8 +291,12 @@ public class ToritoFunctions : MonoBehaviour
 					transform.localPosition = new Vector3 (0f, MapManager._Instance.objectOffset, 0f);
 					tempData.occupant = gameObject;
 
+                    movementReference.SetFacingDirection(movementReference.positionX, movementReference.positionY, tempData.gridPosition.posX, tempData.gridPosition.posY);
+
 					movementReference.positionX = tempData.gridPosition.posX;
 					movementReference.positionY = tempData.gridPosition.posY;
+
+                    movementReference.UpdateFacing();
 
 					movementReference.canPerformMovement = !movementReference.canPerformMovement;
 					playerReference.isAbilityActive = !playerReference.isAbilityActive;
@@ -316,10 +320,14 @@ public class ToritoFunctions : MonoBehaviour
 
 					OnAbilityInteractWithObject (tempData.occupant);
 
-					movementReference.positionX = pointerRayData.transform.GetComponent<ObjectMovement>().previousPositionX;
+                    movementReference.SetFacingDirection(movementReference.positionX, movementReference.positionY, tempData.gridPosition.posX, tempData.gridPosition.posY);
+
+                    movementReference.positionX = pointerRayData.transform.GetComponent<ObjectMovement>().previousPositionX;
 					movementReference.positionY = pointerRayData.transform.GetComponent<ObjectMovement>().previousPositionY;
 
-					print ("X: " + movementReference.positionX + " Y: " + movementReference.positionY);
+                    movementReference.UpdateFacing();
+
+                    print ("X: " + movementReference.positionX + " Y: " + movementReference.positionY);
 
 					transform.parent.GetComponent<TerrainCubeData> ().occupant = null;
 					transform.parent = null;
@@ -331,8 +339,7 @@ public class ToritoFunctions : MonoBehaviour
 
 					tempData.occupant = gameObject;
 
-
-					movementReference.canPerformMovement = !movementReference.canPerformMovement;
+                    movementReference.canPerformMovement = !movementReference.canPerformMovement;
 					playerReference.isAbilityActive = !playerReference.isAbilityActive;
 
 					movementReference.ShowMovableTerrain ();
