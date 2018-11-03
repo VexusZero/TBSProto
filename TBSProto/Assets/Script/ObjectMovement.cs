@@ -128,6 +128,7 @@ public class ObjectMovement : MonoBehaviour
 						if(PostPushCheck(ObjectFacing.West))
 						{
 							print ("Break Movement");
+                            positionX = previousPositionX - i;
 							break;
 						}
 						positionX -= 1;
@@ -140,6 +141,7 @@ public class ObjectMovement : MonoBehaviour
 						if(PostPushCheck(ObjectFacing.East))
 						{
 							print ("Break Movement");
+                            positionX = previousPositionX + i;
 							break;
 						}
 						positionX += 1;
@@ -165,6 +167,7 @@ public class ObjectMovement : MonoBehaviour
 						if(PostPushCheck(ObjectFacing.South))
 						{
 							print ("Break Movement");
+                            positionY = previousPositionY - i;
 							break;
 						}
 						positionY -= 1;
@@ -177,6 +180,7 @@ public class ObjectMovement : MonoBehaviour
 						if(PostPushCheck(ObjectFacing.North))
 						{
 							print ("Break Movement");
+                            positionY = previousPositionY + i;
 							break;
 						}
 						positionY += 1;
@@ -206,10 +210,10 @@ public class ObjectMovement : MonoBehaviour
 			{
 				if(tempMapObject.GetComponent<TerrainCubeData>().occupant != null)
 				{
-					if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
-					{
+				//	if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
+				//	{
 						output = true;
-					}
+				//	}
 				}
 			}
 
@@ -220,10 +224,10 @@ public class ObjectMovement : MonoBehaviour
 			{
 				if(tempMapObject.GetComponent<TerrainCubeData>().occupant != null)
 				{
-					if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
-					{
+				//	if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
+				//	{
 						output = true;
-					}
+				//	}
 				}
 			}
 			break;
@@ -233,10 +237,10 @@ public class ObjectMovement : MonoBehaviour
 			{
 				if(tempMapObject.GetComponent<TerrainCubeData>().occupant != null)
 				{
-					if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
-					{
+				//	if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
+				//	{
 						output = true;
-					}
+				//	}
 				}
 			}
 			break;
@@ -246,10 +250,10 @@ public class ObjectMovement : MonoBehaviour
 			{
 				if(tempMapObject.GetComponent<TerrainCubeData>().occupant != null)
 				{
-					if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
-					{
+				//	if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
+				//	{
 						output = true;
-					}
+				//	}
 				}
 			}
 			break;
