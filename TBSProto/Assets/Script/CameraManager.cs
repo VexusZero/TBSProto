@@ -36,7 +36,11 @@ public class CameraManager : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-		AutoLerpCamera ();
+        if (currentCamera != null)
+        {
+            AutoLerpCamera();
+        }
+		
 	}
 
 	public void AutoLerpCamera()
