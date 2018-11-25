@@ -412,16 +412,16 @@ public class ToritoFunctions : MonoBehaviour
 			switch(tempObjectType)
 			{
 			case ObjectType.Enemy:
-				targetObject.GetComponent<ObjectMovement>().ApplyPushMovement(gameObject);
+				StartCoroutine  (targetObject.GetComponent<ObjectMovement>().ApplyPushMovement(gameObject));
 				break;
 
 			case ObjectType.DirectionalMove:
-				targetObject.GetComponent<ObjectMovement> ().ApplyPushMovement (gameObject);
-				break;
+                StartCoroutine(targetObject.GetComponent<ObjectMovement>().ApplyPushMovement(gameObject));
+                break;
 
 			case ObjectType.Goal:
-				targetObject.GetComponent<ObjectMovement> ().ApplyPushMovement (gameObject);
-				break;
+                    StartCoroutine(targetObject.GetComponent<ObjectMovement>().ApplyPushMovement(gameObject));
+                    break;
 
 			default:
 				break;

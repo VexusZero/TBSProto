@@ -95,15 +95,21 @@ public class ObjectMovement : MonoBehaviour
         }
     }
 
-    public void ApplyPushMovement(GameObject instigatorObject)
+    public IEnumerator ApplyPushMovement(GameObject instigatorObject)
 	{
+        bool isMoving = false;
+
 		int distance;
 
 		previousPositionX = positionX;
 		previousPositionY = positionY;
 
 		MapObjectData tempMapData = instigatorObject.GetComponent<MapObjectData> ();
+        isMoving = true;
 
+        // StartCoroutine(GetComponent<ObjectAnimationManager>().PlayDirectionAnimation(facingConfig));
+
+        
 		switch(tempMapData.type)
 		{
 		case ObjectType.Player:
@@ -129,9 +135,14 @@ public class ObjectMovement : MonoBehaviour
 						{
 							print ("Break Movement");
                             positionX = previousPositionX - i;
+                            
 							break;
 						}
-						positionX -= 1;
+                            while (GetComponent<ObjectAnimationManager>().isPlaying)
+                            {
+                                yield return null;
+                            }
+                            positionX -= 1;
 						UpdatePosition ();
 					}
 
@@ -142,9 +153,14 @@ public class ObjectMovement : MonoBehaviour
 						{
 							print ("Break Movement");
                             positionX = previousPositionX + i;
-							break;
+                               // StartCoroutine(GetComponent<ObjectAnimationManager>().PlayDirectionAnimation(ObjectFacing.East));
+                                break;
 						}
-						positionX += 1;
+                            while (GetComponent<ObjectAnimationManager>().isPlaying)
+                            {
+                                yield return null;
+                            }
+                            positionX += 1;
 						UpdatePosition ();
 					}
 				}
@@ -168,9 +184,14 @@ public class ObjectMovement : MonoBehaviour
 						{
 							print ("Break Movement");
                             positionY = previousPositionY - i;
-							break;
+                              //  StartCoroutine(GetComponent<ObjectAnimationManager>().PlayDirectionAnimation(ObjectFacing.South));
+                                break;
 						}
-						positionY -= 1;
+                            while (GetComponent<ObjectAnimationManager>().isPlaying)
+                            {
+                                yield return null;
+                            }
+                            positionY -= 1;
 						UpdatePosition ();
 					}
 
@@ -181,9 +202,14 @@ public class ObjectMovement : MonoBehaviour
 						{
 							print ("Break Movement");
                             positionY = previousPositionY + i;
-							break;
+                              //  StartCoroutine(GetComponent<ObjectAnimationManager>().PlayDirectionAnimation(ObjectFacing.North));
+                                break;
 						}
-						positionY += 1;
+                            while (GetComponent<ObjectAnimationManager>().isPlaying)
+                            {
+                                yield return null;
+                            }
+                            positionY += 1;
 						UpdatePosition ();
 					}
 				}
@@ -194,7 +220,9 @@ public class ObjectMovement : MonoBehaviour
 		default:
 			break;
 		}
-	}
+
+        StartCoroutine(GetComponent<ObjectAnimationManager>().PlayDirectionAnimation(facingConfig));
+    }
 
 	bool PostPushCheck(ObjectFacing inputFacing)
 	{
@@ -213,8 +241,10 @@ public class ObjectMovement : MonoBehaviour
 				//	if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
 				//	{
 						output = true;
-				//	}
-				}
+                        GetComponent<ObjectAnimationManager>().targetPosition = tempMapObject.transform.localPosition;
+                        //	}
+
+                    }
 			}
 
 			break;
@@ -227,8 +257,9 @@ public class ObjectMovement : MonoBehaviour
 				//	if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
 				//	{
 						output = true;
-				//	}
-				}
+                        GetComponent<ObjectAnimationManager>().targetPosition = tempMapObject.transform.localPosition;
+                        //	}
+                    }
 			}
 			break;
 		case ObjectFacing.East:
@@ -240,8 +271,9 @@ public class ObjectMovement : MonoBehaviour
 				//	if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
 				//	{
 						output = true;
-				//	}
-				}
+                        GetComponent<ObjectAnimationManager>().targetPosition = tempMapObject.transform.localPosition;
+                        //	}
+                    }
 			}
 			break;
 		case ObjectFacing.West:
@@ -253,8 +285,9 @@ public class ObjectMovement : MonoBehaviour
 				//	if(tempMapObject.GetComponent<TerrainCubeData>().occupant.GetComponent<MapObjectData>().type == ObjectType.Wall)
 				//	{
 						output = true;
-				//	}
-				}
+                        GetComponent<ObjectAnimationManager>().targetPosition = tempMapObject.transform.localPosition;
+                        //	}
+                    }
 			}
 			break;
 

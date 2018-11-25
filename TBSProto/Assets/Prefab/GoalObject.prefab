@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33904896414300618}
   - component: {fileID: 23189176315214960}
   - component: {fileID: 114727874462888024}
+  - component: {fileID: 114981558545386984}
   m_Layer: 0
   m_Name: MeshData
   m_TagString: Untagged
@@ -19073,7 +19074,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1815561786240016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebce017a7d94a584ea261e4792c61b5c, type: 3}
   m_Name: 
@@ -19086,7 +19087,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1815561786240016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca36ade7ee694a8489a3acdc8932681b, type: 3}
   m_Name: 
@@ -19108,6 +19109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectAnimator: {fileID: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  isPlaying: 0
 --- !u!114 &114727874462888024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37953,3 +37956,14 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114981558545386984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297763419927288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4904375e61474438862a6df6918f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

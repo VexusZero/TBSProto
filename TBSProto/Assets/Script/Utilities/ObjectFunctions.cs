@@ -35,4 +35,29 @@ public class ObjectFunctions
 		AudioManager._Instance.PlayIndexedSound (0); // might not work in a class-only environment!
 		GameObject.Destroy(targetObject, 1f);
 	}
+
+    public static Vector3 FacingToVector(ObjectFacing inputFacing)
+    {
+
+        Debug.Log("Facing: " + inputFacing);
+        Vector3 output = Vector3.zero;
+
+        switch (inputFacing)
+        {
+            case ObjectFacing.North:
+                output = Vector3.forward;
+                break;
+            case ObjectFacing.South:
+                output = Vector3.back;
+                break;
+            case ObjectFacing.East:
+                output = Vector3.right;
+                break;
+            case ObjectFacing.West:
+                output = Vector3.left;
+                break;
+        }
+
+        return output;
+    }
 }
