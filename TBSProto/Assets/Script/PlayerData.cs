@@ -6,7 +6,7 @@ public class PlayerData : MonoBehaviour
 {
 	public CharacterType character;
 
-	public bool isAbilityActive;
+	public bool isAbilityActive = true;
 
 	// Use this for initialization
 	void Awake ()
@@ -65,10 +65,10 @@ public class PlayerData : MonoBehaviour
 	{
 		PlayerMovement tempReference = gameObject.GetComponent<PlayerMovement> ();
 
-		isAbilityActive = isAbilityActive = !isAbilityActive;
-
-		// Movement lockup setup while ability is active IF-Less variant.
-		tempReference.canPerformMovement = !tempReference.canPerformMovement;
+		isAbilityActive = true;
+        tempReference.canPerformMovement = false;
+        // Movement lockup setup while ability is active IF-Less variant.
+        // tempReference.canPerformMovement = !tempReference.canPerformMovement;
 		tempReference.ShowMovableTerrain ();
 		OnCharacterAbilityStart ();
 

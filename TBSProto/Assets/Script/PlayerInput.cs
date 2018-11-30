@@ -12,6 +12,7 @@ public class PlayerInput : MonoBehaviour
 	{
 		movementReference = gameObject.GetComponent<PlayerMovement> ();
 		playerReference = gameObject.GetComponent<PlayerData> ();
+        playerReference.InputToggleCharacterAbility();
 	}
 	
 	// Update is called once per frame
@@ -19,12 +20,14 @@ public class PlayerInput : MonoBehaviour
 	{
 		if(Input.GetMouseButtonDown(0))
 		{
-			if(movementReference.canPerformMovement)
-			{
-				movementReference.OnPointAction (Input.mousePosition);
-			}
+			// if(movementReference.canPerformMovement)
+			// {
+                // movementReference.OnPointAction (Input.mousePosition);
+              //   playerReference.OnCharacterAbilityClickAction(Input.mousePosition);
 
-			if(playerReference.isAbilityActive)
+            // }
+
+            if (playerReference.isAbilityActive)
 			{
 				playerReference.OnCharacterAbilityClickAction (Input.mousePosition);
 			}
@@ -32,12 +35,14 @@ public class PlayerInput : MonoBehaviour
 
 		if(Input.touchCount == 1)
 		{
-			if(movementReference.canPerformMovement)
+			/*if(movementReference.canPerformMovement)
 			{
-				movementReference.OnPointAction (Input.touches[0].position);
-			}
+                // movementReference.OnPointAction (Input.touches[0].position);
+                playerReference.OnCharacterAbilityClickAction(Input.touches[0].position);
 
-			if(playerReference.isAbilityActive)
+            } */
+
+            if (playerReference.isAbilityActive)
 			{
 				playerReference.OnCharacterAbilityClickAction (Input.touches[0].position);
 			}

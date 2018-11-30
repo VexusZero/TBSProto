@@ -298,13 +298,16 @@ public class ToritoFunctions : MonoBehaviour
 
                     movementReference.UpdateFacing();
 
-					movementReference.canPerformMovement = !movementReference.canPerformMovement;
-					playerReference.isAbilityActive = !playerReference.isAbilityActive;
+                    // movementReference.canPerformMovement = !movementReference.canPerformMovement;
+                    // playerReference.isAbilityActive = !playerReference.isAbilityActive;
 
+
+                    playerReference.InputToggleCharacterAbility();
 					movementReference.ShowMovableTerrain ();
 
 				}
-			}
+                playerReference.InputToggleCharacterAbility();
+            }
 
 			if(pointerRayData.transform.tag == "Object")
 			{
@@ -340,15 +343,19 @@ public class ToritoFunctions : MonoBehaviour
 					tempData.occupant = gameObject;
 
                     movementReference.canPerformMovement = !movementReference.canPerformMovement;
-					playerReference.isAbilityActive = !playerReference.isAbilityActive;
+                    //playerReference.isAbilityActive = !playerReference.isAbilityActive;
 
-					movementReference.ShowMovableTerrain ();
+                    playerReference.InputToggleCharacterAbility();
+                    movementReference.ShowMovableTerrain ();
 
 
 				}
-			}
-		}
-	}
+                playerReference.InputToggleCharacterAbility();
+            }
+            playerReference.InputToggleCharacterAbility();
+        }
+        playerReference.InputToggleCharacterAbility();
+    }
 
 	bool OnAdjacentCheck(TerrainCubeData inputData, ObjectFacing inputFacing)
 	{

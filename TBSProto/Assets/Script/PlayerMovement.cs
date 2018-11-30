@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 	void Start ()
 	{
 		playerReference = gameObject.GetComponent<PlayerData> ();
-
+        playerReference.InputToggleCharacterAbility();
 		positionX = GetComponentInParent<TerrainCubeData> ().gridPosition.posX;
 		positionY = GetComponentInParent<TerrainCubeData> ().gridPosition.posY;
 		ShowMovableTerrain();
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
 	}
 
-	void DefineMovableTerrain()
+	public void DefineMovableTerrain()
 	{
 		if (movablePositions != null)
 		{
@@ -135,7 +135,8 @@ public class PlayerMovement : MonoBehaviour
                     // Update facing-rotation in HERE
                     UpdateFacing();
 
-					ShowMovableTerrain ();
+                    playerReference.InputToggleCharacterAbility();
+                    ShowMovableTerrain ();
 				}
 			}
 		}
