@@ -156,7 +156,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.7911868, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -395,56 +395,6 @@ Prefab:
     - target: {fileID: 1438275789624876, guid: 9016d425ccf721c4daf98198866e8891, type: 2}
       propertyPath: m_Name
       value: MainUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 224720228352619164, guid: 9016d425ccf721c4daf98198866e8891,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 224720228352619164, guid: 9016d425ccf721c4daf98198866e8891,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 224528866903066728, guid: 9016d425ccf721c4daf98198866e8891,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 224528866903066728, guid: 9016d425ccf721c4daf98198866e8891,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 114889951745209490, guid: 9016d425ccf721c4daf98198866e8891,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114889951745209490, guid: 9016d425ccf721c4daf98198866e8891,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114889951745209490, guid: 9016d425ccf721c4daf98198866e8891,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114889951745209490, guid: 9016d425ccf721c4daf98198866e8891,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 88a9292367095064a83164b6e9b75044,
-        type: 3}
-    - target: {fileID: 114889951745209490, guid: 9016d425ccf721c4daf98198866e8891,
-        type: 2}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1561764671271694, guid: 9016d425ccf721c4daf98198866e8891, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9016d425ccf721c4daf98198866e8891, type: 2}
