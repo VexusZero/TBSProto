@@ -211,6 +211,93 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114889951745209490, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 88a9292367095064a83164b6e9b75044,
+        type: 3}
+    - target: {fileID: 114889951745209490, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114889951745209490, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114889951745209490, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114889951745209490, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114052153652761922, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_Text
+      value: ACERCAR
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561764671271694, guid: 9016d425ccf721c4daf98198866e8891, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114356884730940410, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 88a9292367095064a83164b6e9b75044,
+        type: 3}
+    - target: {fileID: 114356884730940410, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899771553920106, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_Text
+      value: "MEN\xDA"
+      objectReference: {fileID: 0}
+    - target: {fileID: 224966036077659168, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224966036077659168, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 224966036077659168, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 224966036077659168, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114899771553920106, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: dd963ef22c9d39d4a853237fe9c5d9a0,
+        type: 3}
+    - target: {fileID: 224528866903066728, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 224528866903066728, guid: 9016d425ccf721c4daf98198866e8891,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9016d425ccf721c4daf98198866e8891, type: 2}
   m_IsPrefabAsset: 0
